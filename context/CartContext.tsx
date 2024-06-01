@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, {
   createContext,
   useReducer,
@@ -31,8 +31,8 @@ const CartContext = createContext<
 >(undefined);
 
 const cartReducer = (state: CartState, action: CartAction): CartState => {
-    console.log(action);
-    
+  console.log(action);
+
   switch (action.type) {
     case "ADD_TO_CART":
       const existingItem = state.find((item) => item.id === action.item.id);
@@ -61,7 +61,7 @@ const CartProvider = ({ children }: { children: ReactNode }) => {
     }
     return [];
   });
-console.log(state);
+  console.log(state);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(state));

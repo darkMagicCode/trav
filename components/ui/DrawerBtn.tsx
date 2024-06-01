@@ -1,5 +1,4 @@
-'use client';
-
+"use client";
 
 import {
   Drawer,
@@ -25,7 +24,7 @@ export function DrawerBtn() {
           <DrawerDescription>This action cannot be undone.</DrawerDescription>
         </DrawerHeader>
         <DrawerFooter>
-          <ShopCard  />
+          <ShopCard />
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
