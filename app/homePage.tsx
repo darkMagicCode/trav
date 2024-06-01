@@ -136,9 +136,15 @@ export default function HomePage({ items }: any) {
                 <DotsHorizontalIcon className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="dark:bg-black-400 bg-black text-white">
+            <DropdownMenuContent
+              align="end"
+              className="dark:bg-black-400 bg-black text-white"
+            >
               <DropdownMenuLabel>Actions</DropdownMenuLabel>
-              <DropdownMenuItem className="hover" onClick={() => handleAddToCart(row.original)}>
+              <DropdownMenuItem
+                className="hover"
+                onClick={() => handleAddToCart(row.original)}
+              >
                 Add To Cart
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -155,13 +161,13 @@ export default function HomePage({ items }: any) {
     <Base imgUrl={"logo"}>
       <div className="grid grid-cols-1 lg:grid-cols-full gap-4 px-2 md:px-10">
         <div className="lg:col-span-3 sm:col-span-1">
-            <DynamicTable
-              data={filteredItems}
-              columns={columns}
-              onAction={handleAction}
-              setMinPrice={setMinPrice}
-              setMaxPrice={setMaxPrice}
-            />
+          <DynamicTable
+            data={filteredItems}
+            columns={columns}
+            onAction={handleAction}
+            setMinPrice={setMinPrice}
+            setMaxPrice={setMaxPrice}
+          />
         </div>
       </div>
     </Base>
