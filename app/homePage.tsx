@@ -1,20 +1,12 @@
 "use client";
-import ProductCard from "@/components/ui/ProductCard";
-import SearchBar from "@/components/ui/SearchBar";
-import SortFilterBar from "@/components/ui/SortFilterBar";
 import { useEffect, useState } from "react";
 import { filterItems, sortItems } from "@/utils/helpers";
-import Header from "@/components/ui/Header";
 import Base from "@/lib/Baseof";
 import config from "../config/products.json";
-import { Toaster } from "@/components/ui/toaster";
-import { Table } from "@/components/ui/table";
-import { DataTableDemo } from "@/components/ui/tableComp";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 import { Button } from "@/components/ui/button";
