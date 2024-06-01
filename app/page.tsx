@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import HomePage from "./homePage";
 import config from "../config/products.json";
