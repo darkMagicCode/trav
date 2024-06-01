@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import * as React from "react";
 import {
@@ -61,8 +61,8 @@ export function DynamicTable<T>({
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   );
-  console.log('table');
-  
+  console.log("table");
+
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
@@ -98,6 +98,7 @@ export function DynamicTable<T>({
           className=" "
         />
         <Input
+          type="number"
           placeholder="Filter min price..."
           value={min}
           onChange={(event) => {
@@ -107,11 +108,18 @@ export function DynamicTable<T>({
           className=" "
         />
         <Input
+          type="number"
           placeholder="Filter  max price..."
           value={max}
           onChange={(event) => {
-            setMaxPrice(event.target.value);
-            setmax(event.target.value);
+          
+            if (event.target.value == "" || Number(event.target.value) <= 0) {
+              setMaxPrice(Math.random() * 9999);
+              setmax('');
+            } else {
+              setMaxPrice(event.target.value);
+              setmax(event.target.value);
+            }
           }}
           className=" "
         />
