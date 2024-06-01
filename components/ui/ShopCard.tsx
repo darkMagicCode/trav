@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useToast } from "./use-toast";
 import { useCart } from "@/context/CartContext";
+import { Button } from "./button";
 
 type CartItem = {
   id: number;
@@ -36,16 +37,16 @@ const ShopCard: React.FC = () => {
     0
   );
   return (
-    <div className="bg-white p-6 rounded shadow-md">
-      <h2 className="text-lg font-semibold mb-4">Shopping Cart</h2>
+    <div className=" p-6 rounded shadow-md bg-background dark:text-primary ">
+      <h2 className="text-lg font-semibold mb-4 ">Shopping Cart</h2>
       {state.length === 0 ? (
-        <p className="text-gray-500">Your cart is empty.</p>
+        <p className="">Your cart is empty.</p>
       ) : (
-        <ul className="mb-4">
+        <ul className="mb-4 ">
           {state.map((item , index) => (
             <li
               key={index}
-              className="flex justify-between items-center mb-2"
+              className="flex justify-between items-center mb-2 "
             >
               <span>
                 {item.name} - ${item.price} x {item.quantity}
@@ -60,13 +61,14 @@ const ShopCard: React.FC = () => {
           ))}
         </ul>
       )}
-      <p className="text-lg font-semibold">Total: ${totalPrice}</p>
-      <button
+      <p className="text-lg font-semibold dark:text-primary">Total: ${totalPrice}</p>
+      <Button
+      variant={"default"}
         onClick={checkOutFromCart}
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none"
+        className=""
       >
         Checkout
-      </button>
+      </Button>
     </div>
   );
 };

@@ -129,7 +129,7 @@ export default function HomePage({ items }: any) {
         const payment = row.original;
 
         return (
-          <DropdownMenu>
+          <DropdownMenu >
             <DropdownMenuTrigger asChild>
               <Button variant="outline" className="h-8 w-8 p-0">
                 <span className="sr-only">Open menu</span>
@@ -138,15 +138,16 @@ export default function HomePage({ items }: any) {
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
-              className="dark:bg-black-400 bg-black text-white"
+              className="dark:bg-black-400 rounded-md bg-black text-white p-3"
             >
-              <DropdownMenuLabel>Actions</DropdownMenuLabel>
-              <DropdownMenuItem
-                className="hover"
+              <DropdownMenuLabel className="mb-2">Actions</DropdownMenuLabel>
+              <Button
+              variant={"outline"}
+                className=""
                 onClick={() => handleAddToCart(row.original)}
               >
                 Add To Cart
-              </DropdownMenuItem>
+              </Button>
             </DropdownMenuContent>
           </DropdownMenu>
         );

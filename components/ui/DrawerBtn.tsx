@@ -18,7 +18,7 @@ export function DrawerBtn() {
   return (
     <Drawer>
       <DrawerTrigger>Open</DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className="bg-background dark:text-primary">
         <DrawerHeader>
           <DrawerTitle>Are you absolutely sure?</DrawerTitle>
           <DrawerDescription>This action cannot be undone.</DrawerDescription>
