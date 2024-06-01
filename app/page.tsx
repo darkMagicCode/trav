@@ -4,7 +4,7 @@ export default function Home() {
   console.log("home");
 
   return (
-    <main className="">
+    <main>
       <HomePage items={config} />
     </main>
   );

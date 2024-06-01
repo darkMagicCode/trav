@@ -21,7 +21,7 @@ export function DrawerBtn() {
   const { state, dispatch } = useCart();
   useEffect(() => {
     setCartState(state.length);
-  }, []);
+  }, [state]);
   return (
     <Drawer>
       <DrawerTrigger>
