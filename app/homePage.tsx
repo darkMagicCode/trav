@@ -159,6 +159,7 @@ export default function HomePage({ items }: any) {
   };
 
   return (
+    
     <Base imgUrl={"logo"}>
       <div className="grid grid-cols-1 lg:grid-cols-full gap-4 px-2 md:px-10">
         <div className="lg:col-span-3 sm:col-span-1">

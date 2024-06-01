@@ -22,7 +22,6 @@ export default function RootLayout({
     <html lang="en" className="">
       <body className={inter.className}>
         <CartProvider>
-          {" "}
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
