@@ -1,0 +1,31 @@
+1- render home page
+2- add to card functionally
+
+PASS  app/__tests__/HomePage.test.tsx
+HomePage
+  √ renders the HomePage component (315 ms)                                                                                                                    
+  √ adds item to cart when "Add To Cart" button is clicked (152 ms)                                                                                            
+                                                                                                                                                               
+--------------------|---------|----------|---------|---------|---------------------------------------                                                            
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                                                 
+--------------------|---------|----------|---------|---------|---------------------------------------
+All files           |   96.13 |    71.42 |   44.82 |   96.13 | 
+app                |   98.87 |       90 |   57.14 |   98.87 | 
+homePage.tsx      |   98.87 |       90 |   57.14 |   98.87 | 158-159
+components/ui      |   95.17 |       75 |    9.09 |   95.17 | 
+DynamicTable.tsx  |    91.6 |    77.77 |      10 |    91.6 | 91-97,106,115-117,125-132,152,171,195
+button.tsx        |     100 |       50 |     100 |     100 | 45
+dropdown-menu.tsx |      95 |      100 |       0 |      95 | 172-181
+input.tsx         |     100 |      100 |     100 |     100 | 
+table.tsx         |     100 |      100 |     100 |     100 | 
+lib                |     100 |    28.57 |     100 |     100 | 
+Baseof.tsx        |     100 |    16.66 |     100 |     100 | 40-93
+utils.ts          |     100 |      100 |     100 |     100 | 
+utils              |    87.5 |    83.33 |     100 |    87.5 | 
+helpers.ts        |    87.5 |    83.33 |     100 |    87.5 | 28-31
+--------------------|---------|----------|---------|---------|---------------------------------------
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        4.255 s
+Ran all test suites.
