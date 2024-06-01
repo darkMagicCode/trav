@@ -85,6 +85,16 @@ export function DynamicTable<T>({
       rowSelection,
     },
   });
+  const [sortLabel, setSortLabel] = React.useState("Sort By");
+
+  const handleSortChange = (id: string | null, desc: boolean, label: React.SetStateAction<string>) => {
+    setSortLabel(label);
+    if (id) {
+      table.setSorting([{ id, desc }]);
+    } else {
+      table.resetSorting();
+    }
+  };
 
   return (
     <div className="w-full">
@@ -112,10 +122,9 @@ export function DynamicTable<T>({
           placeholder="Filter  max price..."
           value={max}
           onChange={(event) => {
-          
             if (event.target.value == "" || Number(event.target.value) <= 0) {
               setMaxPrice(Math.random() * 9999);
-              setmax('');
+              setmax("");
             } else {
               setMaxPrice(event.target.value);
               setmax(event.target.value);
@@ -152,24 +161,22 @@ export function DynamicTable<T>({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto w-[100%]">
-              Sort By <ChevronDownIcon className="ml-2 h-4 w-4" />
+              {sortLabel} <ChevronDownIcon className="ml-2 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuCheckboxItem
               className="capitalize"
-              onCheckedChange={(value) => {
-                table.setSorting([{ id: "price", desc: value }]);
-              }}
+              onCheckedChange={(value) =>
+                handleSortChange("price", value, "Max Price")
+              }
             >
               max price
             </DropdownMenuCheckboxItem>
             <DropdownMenuCheckboxItem
               key={10}
               className="capitalize"
-              onCheckedChange={(value) => {
-                table.resetSorting();
-              }}
+              onCheckedChange={() => handleSortChange(null, false, "Min Price")}
             >
               min price
             </DropdownMenuCheckboxItem>
